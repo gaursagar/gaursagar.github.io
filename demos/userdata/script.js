@@ -55,7 +55,10 @@ function drawControls(nameArray) {
     var th1 = document.createElement('th');
     var th2 = document.createElement('th');
     var head1 = document.createTextNode('State');
-    var head2 = document.createTextNode('Data');
+    var head2 = document.createElement('input');
+    head2.setAttribute('type', 'text');
+    head2.setAttribute('value', 'Data');
+    head2.setAttribute('id', 'userDataName');
     th1.appendChild(head1);
     th2.appendChild(head2);
     xtr.appendChild(th1);
@@ -89,8 +92,14 @@ function drawControls(nameArray) {
     btn2.setAttribute('type', 'button');
     btn2.setAttribute('value', 'Generate Random Data');
     btn2.setAttribute('onclick', 'randomData()');
+    // Plot Population Data
+    var btn3 = document.createElement('input');
+    btn3.setAttribute('type', 'button');
+    btn3.setAttribute('value', 'Plot Population Data');
+    btn3.setAttribute('onclick', 'plotPopulation()');
     ctr.appendChild(btn);
     ctr.appendChild(btn2);
+    ctr.appendChild(btn);
     ctr.appendChild(table);
 }
 
@@ -108,10 +117,11 @@ function formToArray() {
         var fieldData = document.getElementById('stateData' + i).value;
         nameArray[i].stateData = fieldData;
     }
-    renderData();
+    //plot the user data on map
+    plotData();
 }
 
-function renderData() {
+function plotData() {
 //Seed the random number generator for repeatable results.
     Cesium.Math.setRandomNumberSeed(0);
 
@@ -120,7 +130,10 @@ function renderData() {
 
         //Get the array of entities
         var entities = dataSource.entities.values;
-        
+        var userDataName = document.getElementById('userDataName').value;
+        if (userDataName.replace(/^\s+|\s+$/g,'').length === 0) {
+            userDataName = 'User Data';
+        }
         var colorHash = {};
         for (var i = 0; i < entities.length; i++) {
             //For each entity, create a random color based on the state name.
@@ -142,7 +155,9 @@ function renderData() {
 
             for (var j=0; j < nameArray.length; j++) {
                 if (name === nameArray[j].stateName) {
-                    entity.polygon.extrudedHeight = parseInt(nameArray[j].stateData);
+                    var data = parseInt(nameArray[j].stateData)
+                    entity.properties[userDataName] = data;
+                    entity.polygon.extrudedHeight = data;
                 }
             }
         }
