@@ -1,0 +1,9 @@
+App allows users to plot custom data for US states.
+
+Fill the cells with data and press go to plot.
+Alternatively press random to fill cells with random data.
+
+Things to do:
+1. Export as CSV
+2. Export ScreenShot
+3. Dsplay data on screen
