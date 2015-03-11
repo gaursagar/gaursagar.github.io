@@ -2,55 +2,47 @@
 <html lang="en">
 <head>
 <!--
-See https://github.com/AnalyticalGraphicsInc/cesium-google-earth-examples/blob/master/LICENSE.md
-
-Original Work:
-
-Copyright 2008 Google Inc.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-     http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+Cesium Example
 -->  
   <title>User Data</title>
   <script src="../../Cesium/Cesium.js"></script>
   <script src="./script.js"></script>
   <style>
     @import url(../../Cesium/Widgets/widgets.css);
-    #toolbar {
-        background-color: lightgray;
-    }
-    #rows, #cols, #width, #height {
-        width: 50px;
-    }
-    .cesiumContainer {
-        width: 400px; height: 300px; margin: 0;
-    }
   </style>
+      <!-- Bootstrap Core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <!-- <link href="assets/css/??.css" rel="stylesheet"> -->
+    <!-- jQuery -->
+    <script src="assets/js/jquery-1.10.2.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="assets/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div id="cesiumTable"></div>
-<!-- Toolbar to have buttons to 
-1. generate random data
-2. plot on map
-3. forms for user data -->
-<div id="toolbar"></div>
-  <script>
-    var div = document.createElement('div');
-    div.style.height = 400 + 'px';
-    div.style.width = 800 + 'px';
-    var container = document.getElementById('cesiumTable');
-    container.appendChild(div);
-    var viewer = new Cesium.Viewer(div);
-    extractData();
-  </script>
+    <div class="col-md-10 col-md-offset-1">
+        <div class="page-header">
+            <h1>Simple Data Visualiser</h1>
+        </div>
+        <div class="row">
+            <div id="cesiumTable" class="embed-responsive embed-responsive-16by9"></div>
+        </div>
+        <!-- Toolbar to have buttons to 
+        1. generate random data
+        2. plot on map
+        3. forms for user data -->
+        <div id="toolbar" class="col-md-4 col-md-offset-4"></div>
+          <script>
+            var div = document.createElement('div');
+            var container = document.getElementById('cesiumTable');
+            container.appendChild(div);
+            var viewer = new Cesium.Viewer(div, {
+                animation : false,
+                timeline : false
+            });
+            viewer.clock.shouldAnimate = false;
+            extractData();
+          </script>
+      </div>
 </body>
 </html>
