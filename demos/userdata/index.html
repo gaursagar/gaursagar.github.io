@@ -21,6 +21,7 @@ Cesium Example
     <div class="col-md-10 col-md-offset-1">
         <div class="page-header">
             <h1>Simple Data Visualiser</h1>
+            <p>Scroll Down to fill data. Please checkout my <a href = "http://gaursagar.github.io/demos/flighttracker/index.html">FlightTracker Demo</a>, also made using CesiumJS.</p>
         </div>
         <div class="row">
             <div id="cesiumTable" class="embed-responsive embed-responsive-16by9"></div>
@@ -29,14 +30,26 @@ Cesium Example
         1. generate random data
         2. plot on map
         3. forms for user data -->
-        <div id="toolbar" class="col-md-4 col-md-offset-4"></div>
+        <div id="toolbar" class="col-md-6 col-md-offset-2"></div>
+        <div id = "col-md-4">
+        	<strong class = "underline">About</strong>
+        	<br>
+        	<p>
+        		I have made this app using CesiumJS. It allows you to quickly visulaize data (about US states) as 3D plots on the map. <br><br> 
+        		You can fill in the data using the forms <br>(OR If you are lazy(like me :-P) to fill the data press the <strong>Generate Random Data</strong> button to fill the columns with random numbers.)
+        		<br><br>
+        		Press button <strong>Go</strong> to plot the data.
+        	</p>
+        </div>
           <script>
             var div = document.createElement('div');
             var container = document.getElementById('cesiumTable');
             container.appendChild(div);
             var viewer = new Cesium.Viewer(div, {
                 animation : false,
-                timeline : false
+                timeline : false,
+                selectionIndicator : false,
+                infoBox : false
             });
             viewer.clock.shouldAnimate = false;
             extractData();
