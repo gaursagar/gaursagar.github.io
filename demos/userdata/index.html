@@ -10,12 +10,6 @@ Cesium Example
   <style>
     @import url(../../Cesium/Widgets/widgets.css);
   </style>
-    <!-- Custom CSS -->
-    <!-- <link href="assets/css/??.css" rel="stylesheet"> -->
-    <!-- jQuery -->
-    <!--<script src="assets/js/jquery-1.10.2.min.js"></script>-->
-    <!-- Bootstrap Core JavaScript -->
-    <!--<script src="assets/js/bootstrap.min.js"></script>-->
 </head>
 <body>
     <div class="col-md-10 col-md-offset-1">
@@ -30,16 +24,17 @@ Cesium Example
         1. generate random data
         2. plot on map
         3. forms for user data -->
-        <div id="toolbar" class="col-md-6 col-md-offset-2"></div>
+        <div id="toolbar" class="col-md-6"></div>
+        <div class = "col-md-2"></div>
         <div id = "col-md-4">
-        	<strong class = "underline">About</strong>
-        	<br>
-        	<p>
-        		I have made this app using CesiumJS. It allows you to quickly visualize data (about US states) as 3D plots on the map. <br><br> 
-        		You can fill in the data using the forms <br>(TIP: If you are lazy to fill the data press the <strong>Generate Random Data</strong> button to fill the columns with random numbers.)
-        		<br><br>
-        		Press button <strong>Go</strong> to plot the data.
-        	</p>
+            <strong class = "underline">About</strong>
+            <br>
+            <p>
+                I have made this app using CesiumJS. It allows you to quickly visualize data (about US states) as 3D plots on the map. <br><br> 
+                You can fill in the data using the forms <br>(TIP: If you are lazy to fill the data press the <strong>Generate Random Data</strong> button to fill the columns with random numbers.)
+                <br><br>
+                Press button <strong>Go</strong> to plot the data.
+            </p>
         </div>
           <script>
             var div = document.createElement('div');
