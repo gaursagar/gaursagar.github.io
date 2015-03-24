@@ -1,0 +1,293 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>Cesium Sandcastle</title>
+    <link rel="stylesheet" href="../../ThirdParty/codemirror-4.6/lib/codemirror.css">
+    <link rel="stylesheet" href="../../ThirdParty/bootstrap-3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="CesiumSandcastle.css">
+    <script>
+    if (window.location.protocol === 'file:') {
+        if (confirm("You must host this app on a web server.\nSee contributor's guide for more info?")) {
+            window.location = 'https://github.com/AnalyticalGraphicsInc/cesium/wiki/Contributor%27s-Guide';
+        }
+    }
+    </script>
+    <!-- <script src="ThirdParty/requirejs-2.1.9/require.js"></script> -->
+    <script data-dojo-config="async: 1, tlmSiblingOfDojo: 0" src="../../ThirdParty/dojo-release-1.9.3/dojo/dojo.js"></script>
+    <script src="../../ThirdParty/codemirror-4.6/lib/codemirror.js"></script>
+    <script src="../../ThirdParty/jshint-2.1.10/jshint.js"></script>
+    <script src="jsHintOptions.js"></script>
+    <script src="gallery/gallery-index.js"></script>
+    <script src="CesiumSandcastle.js"></script>
+    <!-- <script src="./test.js"></script> -->
+    <!-- The next three lines are for autocomplete -->
+    <link rel="stylesheet" href="../../ThirdParty/codemirror-4.6/addon/hint/show-hint.css">
+    <!-- End of autocomplete -->
+    <meta property="og:title" content="Cesium Sandcastle" />
+    <meta property="og:description" content="The Cesium Sandcastle provides an interactive environment for testing Cesium code." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html" />
+    <meta property="og:image" content="http://cesiumjs.org/images/Sandcastle.png" />
+    <meta property="og:site_name" content="Cesium" />
+    <meta property="fb:admins" content="1222088662,1322006496" />
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://cesiumjs.org" target="_blank"><img src="images/Cesium_Logo_forLightBackground.png" /></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="#" id="buttonRun" onclick=""><span class="glyphicon glyphicon-play" aria-hidden="true"></span> Run (F8)</a></li>
+                    <li><a href="#" id="buttonSuggest" onclick=""><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Suggest (Ctrl-Space)</a></li>
+                    <!-- <li><a href="#" id="buttonInfo" onclick=""><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Info</a></li> -->
+                    <li id = "buttonInfo" class="dropdown">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Info<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header">Description</li>
+                            <li>
+                                <textarea id="description" class="form-control" rows="3" cols="50" placeholder="Use Viewer to start building new applications or easily embed Cesium into existing applications."></textarea>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Labels</li>
+                            <li>
+                                <textarea id="label" class="form-control" rows="1" cols="50" placeholder="Beginner, Showcases"></textarea>
+                            </li>
+                            </li>
+                        </ul>
+                    </li>
+                    <li id = "buttonSaveAs" class="dropdown">
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Save As<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header">
+                                <text>You must save the file to this folder:<br>
+                                    <code>Apps/Sandcastle/gallery/*.html</code><br>
+                                    Some browsers require you to manually rename<br>
+                                    the saved file to a <code>*.html</code> file.
+                                </text>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a id="saveAsFile" class="btn" href="#" download="cesiumDemo.html">
+                                        Save *.html file
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- <li><a href="#" id="buttonSaveAs" onclick="">Save As</a></li> -->
+                    <li id="buttonNewWindow"><a href="#"><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span> Open in New Window</a></li>
+                    <li id="buttonThumbnail"><a href="#"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> View as Thumbnail</a></li>
+                </ul>
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search Gallery">
+                    </div>
+                </form>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav><!-- Navigation Bar -->
+
+    <!-- Container for Preview, Code sections-->
+    <div  id="row2" class="container-fluid">
+        <div id="codeEnvelope" class="col-md-6">
+            <div role="tabpanel">
+
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#jsContainer" role="tab" data-toggle="tab">Javascript Code</a></li>
+                    <li role="presentation"><a href="#htmlContainer" role="tab" data-toggle="tab">HTML body &amp; CSS</a></li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="codeContainer tab-pane active" id="jsContainer">
+                        <textarea id="code" name="code">
+                            // Select a demo from the gallery to load.
+                        </textarea>
+                    </div>
+                    <div role="tabpanel" class="codeContainer tab-pane" id="htmlContainer">
+                         <textarea id="htmlBody" name="htmlBody">
+                            &lt;!--
+                            Select a demo from the gallery to load.
+                            --&gt;
+                        </textarea>
+                    </div>
+                   <!-- <script>
+                        jsEditor = CodeMirror.fromTextArea(document.getElementById('code'), {
+                            mode : 'javascript',
+                            gutters : ['hintGutter', 'errorGutter', 'searchGutter', 'highlightGutter'],
+                            lineNumbers : true,
+                            matchBrackets : true,
+                            indentUnit : 4,
+                            extraKeys : {
+                                'Ctrl-Space' : 'autocomplete',
+                                'F8' : 'runCesium',
+                                'Tab' : 'indentMore',
+                                'Shift-Tab' : 'indentLess'
+                            }
+                        });
+
+                        htmlEditor = CodeMirror.fromTextArea(document.getElementById('htmlBody'), {
+                            mode : 'text/html',
+                            lineNumbers : true,
+                            matchBrackets : true,
+                            indentUnit : 4,
+                            extraKeys : {
+                                'F8' : 'runCesium',
+                                'Tab' : 'indentMore',
+                                'Shift-Tab' : 'indentLess'
+                            }
+                        });
+                    </script> -->
+                </div>
+
+            </div><!-- .tabpanel -->
+        </div><!-- .col-md-6 -->
+        <!-- Cesium Preview Container-->
+        <div id="cesiumContainer" class="col-md-6 sp">
+            <div role="tabpanel">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#innerPanel" role="tab" data-toggle="tab">Cesium</a></li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="innerPanel">
+                        <!-- Cesium Preview Frame -->
+                        <iframe id="bucketFrame" src="templates/bucket.html" class="fullFrame" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
+                    </div>
+                </div>
+            </div><!-- .tabpanel -->
+        </div><!-- .cesiumContainer -->
+
+    <!-- Console and Examples -->
+        <div id="bottomPanel" class="">
+            <div role="tabpanel">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" id="bottomPanel" role="tablist">
+                    <li role="presentation" class="active"><a href="#gallery" role="tab" data-toggle="tab">Gallery</a></li>
+                    <li role="presentation"><a href="#logContainer" role="tab" data-toggle="tab">Console</a></li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="gallery">
+                        <div id="innerPanel">
+                            <div role="tabpanel">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <!-- Descriptions to be added here -->
+                                    <li role="presentation"><a href="#searchResults" role="tab" data-toggle="tab">Search Results</a></li>
+                                </ul>
+
+                                <div class="tab-content">
+                                    <div class="tab-pane">
+                                        <div id="searchResults" class="demosContainer">
+                                            <div id="searchDemos" class="demos"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- #innerPanel -->
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="logContainer">
+                        <div id="logOutput"></div>
+                    </div>
+                </div><!-- .tab-content-->
+            </div><!-- .tabpanel -->
+        </div><!-- #bottomPanel -->
+    </div><!-- .container-fluid -->
+    <!-- Testing Resizable Containers-->
+    <!-- <div class="cont">
+    <div class="row">
+        <div class="col-sm-6 sp editor">
+            <div class="pane-label"><code>css</code></div>
+            <div class="inner">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+                veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
+                ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+                cor magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro
+                quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
+                velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore
+                magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum
+                exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea
+                commodi consequatur?</div>
+        </div>
+        <div class="col-sm-6 sp">
+            <div class="pane-label"><code>javascript</code></div>
+            <div class="inner">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+                veritatis et quasi architecto beatae vitae</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="pane-label"><code>html</code></div>
+            <div class="inner">
+                 <h1>Bootstrap Layout</h1>
+                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+                veritatis et quasi architecto beatae vitae.</div>
+        </div>
+    </div>
+</div> -->
+
+    <script>
+    // $(window).bind("resize", function(event){
+    //     if (this == event.target) {
+    //         $('.sp').removeAttr('style');
+    //     }
+    // });
+
+
+    // $('.editor').resizable({
+    //     handles: 'e, s',
+    //     minWidth:100,
+    //     maxWidth:900,
+    //     resize:function(event,ui){
+    //         var x=ui.element.outerWidth();
+    //         var y=ui.element.outerHeight();
+    //         var ele=ui.element;
+    //         var factor = $(this).parent().width()-x;
+    //         var f2 = $(this).parent().width() * .02999;
+    //         console.log(f2);
+    //         $.each(ele.siblings(),function(idx,item){
+              
+    //             ele.siblings().eq(idx).css('height',y+'px');
+    //             //ele.siblings().eq(idx).css('width',(factor-41)+'px');
+    //             ele.siblings().eq(idx).width((factor-f2)+'px');
+
+    //         });
+    //     }
+    // });
+
+    // $('.sp:not(.editor)').resizable({
+    //     handles: 's',
+    //     resize:function(event,ui){
+            
+    //         var y=ui.element.outerHeight();
+    //         var ele=ui.element;
+            
+    //         $.each(ele.siblings(),function(idx,item){
+    //             ele.siblings().eq(idx).css('height',y+'px');
+    //         });
+    //     }
+    // });
+    </script>
+    <script src="../../ThirdParty/jquery-2.1.3/jquery-2.1.3.min.js"></script>
+    <script src="../../ThirdParty/bootstrap-3.3.2/js/bootstrap.min.js"></script>
+</body>
+</html>
