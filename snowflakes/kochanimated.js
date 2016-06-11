@@ -16,7 +16,7 @@ window.onload = function() {
 	// var p3 = {x: -1*p0.x , y: p0.y};
 
 	// Regulat Hexagon 
-	var p0 = {x: rInt(1, 400) , y: rInt(1, 400)};
+	var p0 = {x: rInt(1, 300) , y: rInt(1, 300)};
 	var p1 = {
 			x: p0.x * Math.cos(Math.PI/3) + p0.y * Math.sin(Math.PI/3),
 			y: p0.y * Math.cos(Math.PI/3) - p0.x * Math.sin(Math.PI/3)
@@ -63,12 +63,12 @@ window.onload = function() {
 		context.save();
 		context.translate(width / 2, height / 2);
 		context.rotate(r += 0.01);
-		koch(p0, p1, 3);
-		koch(p1, p2, 3);
-		koch(p2, p3, 3);
-		koch(p3, p4, 3);
-		koch(p4, p5, 3);
-		koch(p5, p0, 3);
+		koch(p0, p1, 4);
+		koch(p1, p2, 4);
+		koch(p2, p3, 4);
+		koch(p3, p4, 4);
+		koch(p4, p5, 4);
+		koch(p5, p0, 4);
 		context.restore();
 		requestAnimationFrame(draw);
 	}
