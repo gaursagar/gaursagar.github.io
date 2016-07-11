@@ -13,3 +13,4 @@ Things to do..
 2. Start for placements 
 3. Today I didn't do nothing. 
 4. I feel aimed. 
+5. I am really focused now. 
