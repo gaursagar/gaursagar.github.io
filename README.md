@@ -14,3 +14,4 @@ Things to do..
 3. Today I didn't do nothing. 
 4. I feel aimed. 
 5. I am really focused now. 
+6. It's not gonna be her. 
