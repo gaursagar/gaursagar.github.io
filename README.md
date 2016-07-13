@@ -15,3 +15,4 @@ Things to do..
 4. I feel aimed. 
 5. I am really focused now. 
 6. It's not gonna be her. 
+7. Til stuff takes time and it's alright. 
