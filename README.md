@@ -16,3 +16,4 @@ Things to do..
 5. I am really focused now. 
 6. It's not gonna be her. 
 7. Til stuff takes time and it's alright. 
+8. 18 July 16 I don't have dreams I have goals. 
