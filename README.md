@@ -23,3 +23,6 @@ Goals.
 
 Launch gane within 3 months. 
 Read for interviews daily. 
+
+How to motivate self? 
+It's like really difficult you know.. 
