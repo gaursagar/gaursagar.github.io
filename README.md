@@ -31,3 +31,4 @@ It's like really difficult you know..
 What now? 
 How mind works. 
 Daily x
+I don't watch,  I study it. 
