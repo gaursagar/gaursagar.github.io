@@ -26,3 +26,8 @@ Read for interviews daily.
 
 How to motivate self? 
 It's like really difficult you know.. 
+
+
+What now? 
+How mind works. 
+Daily x
