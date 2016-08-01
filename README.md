@@ -32,3 +32,7 @@ What now?
 How mind works. 
 Daily x
 I don't watch,  I study it. 
+
+
+"Being selfish is such an underrated luxury that can be afforded easily but well not spent on at all"
+Try to understand it.
