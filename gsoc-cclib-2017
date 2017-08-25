@@ -1,0 +1,83 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>GSoC 2017 \m/</title>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<style type=text/css media=screen>
+body {
+font-family: Verdana, Arial, Helvetica, Sans-Serif;
+font-size: 16px;
+background-color: #111222;
+color: #fff;
+line-height: 125%;
+}
+
+#hero {
+margin-left: 20px;
+margin-right: 20px;
+background-color: #111222;
+}
+
+h1 {
+ margin-left: 20px;
+
+color: #999;
+}
+
+h3 {
+font-size: 18px;
+color: ##999;
+}
+
+h2 {
+font-size: 18px;
+color: #111222;
+font-style: italic
+}
+
+b {
+color: #111222;
+}
+
+a {
+  color: #101010;
+  background-color: #ababab;
+  text-decoration: none;
+}
+
+ul {
+margin-left: -20px;
+list-style-type: none;
+}
+
+</style>
+<script>
+
+
+</script>
+
+</head>
+
+<body>
+<br>
+<h1 id='color'><a href="https://summerofcode.withgoogle.com/projects/#4991488722206720">GSoC 2017</a></h1>
+<div id="hero">
+In Summer of 2017 my proposal to contribute to <a href="http://www.openchemistry.org/">Open Chemistry</a> was selected for GSoC 2017. In particular I was contributing to <a href="cclib.github.io">cclib</a>, which is a parsing library for outputs from computational chemistry packages.
+<br>
+I am pursuing my Masters in Computational Chemistry, and have been using cclib for parsing calculations I run on GAMESS and Gaussian. I wrote my proposal for cclib due to familiarity with the library.
+<br><br>
+I had proposed to extend cclib's io features to include writers for the <a href="http://www.cmbi.ru.nl/molden/molden_format.html">Molden format</a> files and the <a href="http://aim.tkgristmill.com/wfxformat.html">wfx format</a> files.
+<br><br>
+My merged contributions can be seen <a href="https://github.com/cclib/cclib/search?o=desc&q=author%3Agaursagar&s=committer-date&type=Commits">here</a>.
+<br>
+One more PR related to the wfx writer is under review. The PR can be viewed <a href="https://github.com/cclib/cclib/pull/400">here</a>.
+<br><br>
+<h3>Acknowledgements:</h3>
+I am very thankful to my mentors <u>Adam Tenderholt</u> and <u>Karol Langner</u> for their help throughout the term.
+Working with them I learnt a great deal about using git more properly, certain good programming practices in python and writing code which others can understand. <b>Thanks a lot guys :D</b><u>  </u>
+<br><br>
+Also, passively watching over other discussions happening on github was a good exposure to other concepts of computational chemistry I have so far not used in my research. So thanks to Eric, and other cclib'ers for their insightful discussions.
+</div> 
+
+</body>
+</html>
