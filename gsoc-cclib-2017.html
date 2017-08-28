@@ -65,10 +65,17 @@ list-style-type: none;
 In Summer of 2017 my proposal to contribute to <a href="http://www.openchemistry.org/">Open Chemistry</a> was selected for GSoC 2017. In particular I was contributing to <a href="cclib.github.io">cclib</a>, which is a parsing library for outputs from computational chemistry packages.
 <br>
 I am pursuing my Masters in Computational Chemistry, and have been using cclib for parsing calculations I run on GAMESS and Gaussian. I wrote my proposal for cclib due to familiarity with the library.
-<br><br>
+<br>
+<h3>Contributions:</h3>
 I had proposed to extend cclib's io features to include writers for the <a href="http://www.cmbi.ru.nl/molden/molden_format.html">Molden format</a> files and the <a href="http://aim.tkgristmill.com/wfxformat.html">wfx format</a> files.
 <br><br>
-My merged contributions can be seen <a href="https://github.com/cclib/cclib/search?o=desc&q=author%3Agaursagar&s=committer-date&type=Commits">here</a>.
+<u>WFX</u> files are used by <a href="<a href="http://aim.tkgristmill.com>AIMALL</a> program for AIM analysis. 
+Atoms in Molecules (AIM) theory is important to characterize individual atomic contributions to the overall stability of the molecule. Supporting a wfx writer bridges cclib and the AIMALL program.
+<br><br>
+<u>Molden</u> Format is used to interface to the <a href="http://www.cmbi.ru.nl/molden/">Molden</a> program. Molden can currently read outputs from Gaussian, Gamess-US/UK and MOPAC and convert them to molden format. And there are scripts available to write Molden files from ADF, MOLPRO, MOLCAS, DALTON, Jaguar, Turbomole, etc. 
+However, supporting a Molden writer in cclib is an easier solution than depending upon multiple different scripts. Moreover, cclib constantly adds parsing support for new programs would all benefit from a single Molden writer.
+<br><br>
+My merged contributions related to the Molden writer, and misc patches can be seen <a href="https://github.com/cclib/cclib/search?o=desc&q=author%3Agaursagar&s=committer-date&type=Commits">here</a>.
 <br>
 One more PR related to the wfx writer is under review. The PR can be viewed <a href="https://github.com/cclib/cclib/pull/400">here</a>.
 <br><br>
