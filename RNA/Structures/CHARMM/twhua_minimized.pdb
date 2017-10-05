@@ -1,0 +1,32 @@
+REMARK  MINIMIZE                                                                      
+REMARK  CHARMM -I MINIMIZE.INP -O MINIMIZE.OUT                                        
+REMARK   DATE:     7/31/17     16: 6: 2      CREATED BY USER: sagar                   
+ATOM      1  N1  URA     1       0.063   0.347  -0.895  1.00  0.00      RNAA
+ATOM      2  H1  URA     1       0.122  -0.380  -1.586  1.00  0.00      RNAA
+ATOM      3  C6  URA     1      -0.698   1.467  -1.108  1.00  0.00      RNAA
+ATOM      4  H6  URA     1      -1.253   1.517  -2.051  1.00  0.00      RNAA
+ATOM      5  C2  URA     1       0.810   0.166   0.203  1.00  0.00      RNAA
+ATOM      6  O2  URA     1       1.498  -0.839   0.332  1.00  0.00      RNAA
+ATOM      7  N3  URA     1       0.729   1.166   1.121  1.00  0.00      RNAA
+ATOM      8  H3  URA     1       1.262   1.040   1.952  1.00  0.00      RNAA
+ATOM      9  C4  URA     1      -0.003   2.332   1.017  1.00  0.00      RNAA
+ATOM     10  O4  URA     1       0.025   3.156   1.927  1.00  0.00      RNAA
+ATOM     11  C5  URA     1      -0.755   2.454  -0.202  1.00  0.00      RNAA
+ATOM     12  H5  URA     1      -1.355   3.348  -0.353  1.00  0.00      RNAA
+ATOM     13  N9  ADE     2       7.060   4.986  -0.395  1.00  0.00      RNAA
+ATOM     14  H9  ADE     2       7.464   5.665  -1.012  1.00  0.00      RNAA
+ATOM     15  C5  ADE     2       5.791   3.412   0.439  1.00  0.00      RNAA
+ATOM     16  N7  ADE     2       6.596   3.860   1.478  1.00  0.00      RNAA
+ATOM     17  C8  ADE     2       7.340   4.787   0.933  1.00  0.00      RNAA
+ATOM     18  H8  ADE     2       8.120   5.346   1.455  1.00  0.00      RNAA
+ATOM     19  N1  ADE     2       4.262   2.176  -0.878  1.00  0.00      RNAA
+ATOM     20  C2  ADE     2       4.675   2.926  -1.904  1.00  0.00      RNAA
+ATOM     21  H2  ADE     2       4.200   2.699  -2.862  1.00  0.00      RNAA
+ATOM     22  N3  ADE     2       5.556   3.933  -1.927  1.00  0.00      RNAA
+ATOM     23  C4  ADE     2       6.086   4.102  -0.719  1.00  0.00      RNAA
+ATOM     24  C6  ADE     2       4.805   2.405   0.343  1.00  0.00      RNAA
+ATOM     25  N6  ADE     2       4.348   1.676   1.378  1.00  0.00      RNAA
+ATOM     26  H61 ADE     2       4.214   2.102   2.268  1.00  0.00      RNAA
+ATOM     27  H62 ADE     2       3.862   0.839   1.141  1.00  0.00      RNAA
+TER      28      ADE      2
+END

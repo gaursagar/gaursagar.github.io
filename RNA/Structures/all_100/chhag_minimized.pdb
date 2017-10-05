@@ -1,0 +1,36 @@
+REMARK  MINIMIZE                                                                      
+REMARK  CHARMM -I MINIMIZE.INP -O MINIMIZE.OUT                                        
+REMARK   DATE:     9/15/17     15:17:28      CREATED BY USER: sagar                   
+ATOM      1  N9  ADE     1      -5.390   1.145   0.004  1.00  0.00      RNAA
+ATOM      2  H9  ADE     1      -6.386   1.258   0.006  1.00  0.00      RNAA
+ATOM      3  C5  ADE     1      -3.383   0.276   0.000  1.00  0.00      RNAA
+ATOM      4  N7  ADE     1      -3.217   1.656   0.000  1.00  0.00      RNAA
+ATOM      5  C8  ADE     1      -4.434   2.127   0.003  1.00  0.00      RNAA
+ATOM      6  H8  ADE     1      -4.686   3.191   0.003  1.00  0.00      RNAA
+ATOM      7  N1  ADE     1      -3.010  -2.060  -0.001  1.00  0.00      RNAA
+ATOM      8  C2  ADE     1      -4.340  -2.186   0.001  1.00  0.00      RNAA
+ATOM      9  H2  ADE     1      -4.707  -3.216   0.002  1.00  0.00      RNAA
+ATOM     10  N3  ADE     1      -5.289  -1.242   0.004  1.00  0.00      RNAA
+ATOM     11  C4  ADE     1      -4.728  -0.037   0.003  1.00  0.00      RNAA
+ATOM     12  C6  ADE     1      -2.477  -0.808  -0.002  1.00  0.00      RNAA
+ATOM     13  N6  ADE     1      -1.138  -0.658  -0.004  1.00  0.00      RNAA
+ATOM     14  H61 ADE     1      -0.545  -1.462  -0.008  1.00  0.00      RNAA
+ATOM     15  H62 ADE     1      -0.678   0.234  -0.005  1.00  0.00      RNAA
+ATOM     16  N9  GUA     2       3.143   2.418  -0.005  1.00  0.00      RNAA
+ATOM     17  C4  GUA     2       3.547   1.132  -0.005  1.00  0.00      RNAA
+ATOM     18  H9  GUA     2       3.748   3.217  -0.005  1.00  0.00      RNAA
+ATOM     19  N2  GUA     2       6.110  -1.170   0.070  1.00  0.00      RNAA
+ATOM     20  H21 GUA     2       6.240  -2.142   0.229  1.00  0.00      RNAA
+ATOM     21  H22 GUA     2       6.886  -0.547   0.085  1.00  0.00      RNAA
+ATOM     22  N3  GUA     2       4.820   0.730   0.005  1.00  0.00      RNAA
+ATOM     23  C2  GUA     2       4.917  -0.595   0.021  1.00  0.00      RNAA
+ATOM     24  N1  GUA     2       3.831  -1.442   0.012  1.00  0.00      RNAA
+ATOM     25  H1  GUA     2       3.973  -2.431  -0.012  1.00  0.00      RNAA
+ATOM     26  C6  GUA     2       2.497  -1.033  -0.011  1.00  0.00      RNAA
+ATOM     27  O6  GUA     2       1.583  -1.860  -0.020  1.00  0.00      RNAA
+ATOM     28  C5  GUA     2       2.392   0.382  -0.010  1.00  0.00      RNAA
+ATOM     29  N7  GUA     2       1.276   1.207  -0.012  1.00  0.00      RNAA
+ATOM     30  C8  GUA     2       1.767   2.415  -0.008  1.00  0.00      RNAA
+ATOM     31  H8  GUA     2       1.164   3.327  -0.007  1.00  0.00      RNAA
+TER      32      GUA      2
+END
